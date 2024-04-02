@@ -1,0 +1,49 @@
+.main-box {
+    align-content: center;
+    display: column;
+    font-family: arial;
+    margin: 25px;
+    height: 200px;
+}
+
+.title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+.route-box {
+    border: 3px solid rgb(218, 218, 218);
+    /* border-radius: 10px; */
+    padding: 50px;
+    width: 1400px;
+    height: 70vh;
+    margin: auto;
+    overflow-y: scroll;
+}
+.header {
+    width: 1400px;
+    margin: auto;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+}
+.margin-box {
+    height: 30px;
+}
+
+.links-btn {
+    background-color: transparent;
+    color: black;
+    width: 200px;
+    border-color: aliceblue;
+    font-size: 20px;
+}
+.links-btn:hover {
+    background-color: rgb(127, 197, 255);
+    color: white;
+}
+.links-btn:active {
+    background-color: blue;
+    color: white;
+}
