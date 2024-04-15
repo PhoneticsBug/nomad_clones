@@ -1,4 +1,5 @@
 .main-box {
+    
     align-content: center;
     display: column;
     font-family: arial;
@@ -46,4 +47,32 @@
 .links-btn:active {
     background-color: blue;
     color: white;
+}
+
+.movies-holder {
+    display: flex;
+}
+
+.movie-contiainer {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    margin-top: 30px;
+    flex-wrap: nowrap; /* 요소들이 넘칠 경우 줄바꿈을 하지 않도록 설정 */
+    overflow-x: auto; /* 가로 스크롤을 활성화 */
+    -webkit-overflow-scrolling: touch; /* iOS 기기에서 터치 스크롤을 활성화 */
+    scroll-snap-type: x mandatory; /* 스크롤 시 가로 방향으로 스냅되도록 설정 */
+
+}
+
+.movie-box {
+    height: 350px;
+    width: 500px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+
+}
+
+.movie-img {
+    height: 200px;
 }

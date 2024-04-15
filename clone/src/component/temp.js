@@ -1,38 +1,61 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from "react";
+import MovieLink  from "../component/movielink/movielink.js";
+import '../App.css'
 
-const Detail = () => {
-  const [movie, setMovie] = useState(null);
+function Movie() {
+    const [loading, setLoading] = useState(true);
+    const [movies, setMovies] = useState([]);
+    const moviesDirection = useRef(null);
 
-  const MovieInfo = ({ movie }) => {
-    if (!movie) {
-      return <div>Loading...</div>;
-    }
-  
-    return (
-      <div style={{ textAlign: 'center' }}>
-        <h2>{movie.title}</h2>
-        <img src={movie.medium_cover_image} alt={movie.title} />
-        <p>{movie.description_intro || 'No description available.'}</p>
-      </div>
-    );
+    const getMovies = async() => {
+        const json = await (await fetch("https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year")).json();
+
+        setMovies(json.data.movies);
+        setLoading(false);
+    };
+    
+    useEffect(() => {
+        getMovies();
+        }, []);
+    
+    const Scroll = (direction) => {
+        if (direction === 'left') {
+            moviesDirection.current.scrollBy({left: -300, behavior: 'smooth'});
+        } else{
+            if (direction === 'right') {
+                moviesDirection.current.scrollBy({left: 300, behavior: 'smooth'})
+        }
+    };
   };
 
-  useEffect(() => {
-    // 영화 데이터를 불러오는 로직을 여기에 구현합니다.
-    // 예시로, 하드코딩된 데이터를 사용합니다.
-    const movieData = {
-      title: "Bray Wyatt: Becoming Immortal",
-      medium_cover_image: "https://yts.mx/assets/images/movies/bray_wyatt_becoming_immortal_2024/medium-cover.jpg",
-      description_intro: "" // 이 부분은 실제 데이터에 따라 다를 수 있습니다.
-    };
-    setMovie(movieData);
-  }, []);
-
-  return (
+    return (
+    
     <div>
-      <MovieInfo movie={movie} />
-    </div>
-  );
-};
+        <h1> Movies </h1>
+        <hr/>
+        <div className="movies-holder">
+        <button onClick={() => Scroll('left')}> left </button>
+        { loading ? 
+            (<strong> Loading... </strong> 
+            ) : (
+            <div className="movie-contiainer" ref={moviesDirection}>
+                {movies.map((movie) => (
+                    <MovieLink 
+                    key={movie.id}
+                    id={movie.id}
+                    medium_cover_image={movie.medium_cover_image}
+                    title={movie.title}
+                    summary={movie.summary}
+                    genres={movie.genres}
+                    year={movie.year}
+                />
+                ))}
+            </div>
+            )
+            }
+        </div>
+        <button onClick={() => Scroll('right')}> right </button>
+    </div>)
 
-export default Detail;
+};
+export default Movie; 

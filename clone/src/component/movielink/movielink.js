@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import 'react-router-dom';
 import { Link } from 'react-router-dom'
+import '../../App.css'
 
 function MovieLink ({medium_cover_image, title, summary, genres, year, id}) {
     return (
-        <div> 
-                <img src={medium_cover_image} alt={title}/>
-                <h2>
+        <div className="movie-box"> 
+                <img src={medium_cover_image} alt={title} className='movie-img'/>
+                <h3>
                      <Link to={`/detail/${id}`}> {title} ({year}) </Link> 
-                </h2>
+                </h3>
                 {/* <p> {summary} </p>  */}
                 {/* <ul>
                     {genres.map((g => 

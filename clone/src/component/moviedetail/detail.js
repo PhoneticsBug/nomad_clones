@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+
 const Detail = () => {
     const [movie, setMovie] = useState(null);
     const { id } = useParams();
