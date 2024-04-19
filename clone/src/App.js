@@ -23,7 +23,8 @@ const App = () => {
      <Header/>
      <div className="route-box">
       <Routes>
-      <Route path="/" element={<Intro />} />
+      <Route path="/" element={<Movie />} />
+        <Route path="/intro" element={<Intro />} />  
         <Route path="/CleanUp" element={<CleanUp />} />
         <Route path="/LearnUseState" element={<LearnUseState />} />
         <Route path="/TodoList" element={<TodoList />} />

@@ -28,14 +28,14 @@ const Header = () => {
     return (
         <>
         <div className="header">
-            
-            <Link to="/">
+        
+            {pages.map((page, index) => linkButton(page, page.split(".")[0], index))}
+            <Link to="/intro">
                 <button
                     className="links-btn">
-                    home
+                    Intro(Readme)
                 </button>
             </Link>
-            {pages.map((page, index) => linkButton(page, page.split(".")[0], index))}
         </div>
         <div className="margin-box"></div>
         </>

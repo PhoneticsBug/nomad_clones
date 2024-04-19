@@ -4,7 +4,7 @@
     display: column;
     font-family: arial;
     margin: 25px;
-    height: 200px;
+
 }
 
 .title {
@@ -18,7 +18,7 @@
     /* border-radius: 10px; */
     padding: 50px;
     width: 1400px;
-    height: 70vh;
+    height: 75vh;
     margin: auto;
     overflow-y: scroll;
 }
@@ -30,23 +30,28 @@
     align-items: center;
 }
 .margin-box {
-    height: 30px;
+    height: 20px;
 }
 
 .links-btn {
     background-color: transparent;
     color: black;
-    width: 200px;
-    border-color: aliceblue;
+    width: 190px;
+    /* border-radius: 10px; */
+    margin-right: 5px;
+    margin-left: 5px;
     font-size: 20px;
+    height: 35px;
+    box-shadow: 0px 8px 6px -6px transparent;
+    border-color: transparent;
 }
 .links-btn:hover {
-    background-color: rgb(127, 197, 255);
-    color: white;
+    color: rgb(53, 164, 255);
+    font-size: 25px;
 }
 .links-btn:active {
-    background-color: blue;
-    color: white;
+    color: rgb(71, 130, 207);
+    font-size: 28px;
 }
 
 .movies-holder {
@@ -57,11 +62,9 @@
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-    margin-top: 30px;
-    flex-wrap: nowrap; /* 요소들이 넘칠 경우 줄바꿈을 하지 않도록 설정 */
-    overflow-x: auto; /* 가로 스크롤을 활성화 */
-    -webkit-overflow-scrolling: touch; /* iOS 기기에서 터치 스크롤을 활성화 */
-    scroll-snap-type: x mandatory; /* 스크롤 시 가로 방향으로 스냅되도록 설정 */
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; /* 터치 스크롤 */
 
 }
 
@@ -73,6 +76,78 @@
 
 }
 
+.go-back-btn {
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+    font-size: 25px;
+    margin-left: 96.7%;
+    margin-top: 7px;
+}
+.go-back-btn:hover {
+    color: red;
+}
+.go-back-btn:active {
+    color: aliceblue;
+}
+
 .movie-img {
     height: 200px;
 }
+
+.lr-btn {
+    background-color: transparent;
+    border-color: transparent;
+    color: black;
+    font-size: 33px;
+    font-weight: bolder;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 90px;
+    height: 100px;
+    align-self: center;
+}
+.lr-btn:hover {
+    color: blue;
+}
+.lr-btn:active {
+    color: rgb(89, 191, 250);
+}
+
+.detail-background {
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+    color: white;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+    text-decoration: solid;
+    font-size: 18px;
+    padding-left: 30px;
+    /* backdrop-filter: brightness(10%); */
+    
+  }
+  
+  .detail-background img {
+    max-width: 100%;
+    cursor: pointer;
+  }
+
+  .description-box {
+    display: flex;
+    margin-top: 100px;
+  }
+
+  .desc-img-name {
+    width: 300px;
+    margin-left: 50px;
+  }
+
+  .desc-desc {
+    margin-left: 100px;
+    margin-top: 150px;
+    width: 700px;
+  }
+
+  .movie-description {
+    overflow-y: auto;
+  }

@@ -17,20 +17,37 @@ const Detail = () => {
         fetchMovie();
     }, [id]);
 
+    const openImageInNewTab = () => {
+        window.open(movie.large_cover_image, '_blank');
+    };
+
     return (
-        <>
-            <button onClick={() => navigate(-1)}>Go Back</button>
-            <p>This is the detail page</p>
+        <div
+        className="detail-background" 
+        style={{ 
+            backgroundImage: `url(${movie?.background_image_original})`,
+        }}>
+            <button onClick={() => navigate(-1)} className="go-back-btn"> ✖ </button>
             {movie ? (
-                <div>
-                    <h2>{movie.title} ({movie.year || ""}) </h2>
-                    <img src={movie.medium_cover_image} alt={movie.title} />
-                    <p>{movie.description_full || 'No description available.'} </p>
+                <div className="description-box">
+                    <div className="desc-img-name">
+                        <h2>{movie.title} ({movie.year || ""}) </h2>
+                        <img src={movie.medium_cover_image} alt={movie.title_long} onClick={openImageInNewTab}/>
+                        <h4> Rating: {movie.rating} </h4>
+                        <h4> runtime: {movie.runtime}min </h4>
+                        <p>  </p>
+                        <h4> Genres </h4>
+                        <p> {movie.genres.map((g => <li key={g}> {g} </li>))} </p>
+                    </div>
+                    <div className="desc-desc">
+                        <h2> Descriptions </h2>
+                        <div className="movie-description"> {movie.description_full  || movie.summary || 'No description available.'} </div>
+                    </div>
                 </div>
             ) : (
                 <div>Loading...</div>
             )}
-        </>
+        </div>
     );
 };
 
