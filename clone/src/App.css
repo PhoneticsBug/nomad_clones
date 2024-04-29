@@ -1,23 +1,33 @@
 .main-box {
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     align-content: center;
     display: column;
     font-family: arial;
-    margin: 25px;
+    /* margin: 25px; */
+    background-image: linear-gradient(to bottom, black, rgb(22, 34, 43));
+    background-size: 100%;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    padding: 15px;
+    margin-left: -1%;
+    margin-top: -1%;
+
 
 }
 
 .title {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 30px;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .route-box {
-    border: 3px solid rgb(218, 218, 218);
-    /* border-radius: 10px; */
+    /* border: 3px solid rgb(218, 218, 218); */
+    border-radius: 10px;
     padding: 50px;
-    width: 1400px;
+    width: 80%;
     height: 75vh;
     margin: auto;
     overflow-y: scroll;
@@ -35,7 +45,7 @@
 
 .links-btn {
     background-color: transparent;
-    color: black;
+    color: white;
     width: 190px;
     /* border-radius: 10px; */
     margin-right: 5px;
@@ -50,7 +60,7 @@
     font-size: 25px;
 }
 .links-btn:active {
-    color: rgb(71, 130, 207);
+    color: rgb(91, 144, 212);
     font-size: 28px;
 }
 
@@ -81,7 +91,7 @@
     border-color: transparent;
     color: white;
     font-size: 25px;
-    margin-left: 96.7%;
+    margin-left: 96.3%;
     margin-top: 7px;
 }
 .go-back-btn:hover {
@@ -94,11 +104,14 @@
 .movie-img {
     height: 200px;
 }
+.movie-img:hover{
+    height: 230px;
+}
 
 .lr-btn {
     background-color: transparent;
     border-color: transparent;
-    color: black;
+    color: white;
     font-size: 33px;
     font-weight: bolder;
     margin-right: 5px;
@@ -108,7 +121,7 @@
     align-self: center;
 }
 .lr-btn:hover {
-    color: blue;
+    color: rgb(64, 125, 255);
 }
 .lr-btn:active {
     color: rgb(89, 191, 250);
@@ -123,6 +136,7 @@
     text-decoration: solid;
     font-size: 18px;
     padding-left: 30px;
+    border-radius: 15px;
     /* backdrop-filter: brightness(10%); */
     
   }
@@ -130,6 +144,7 @@
   .detail-background img {
     max-width: 100%;
     cursor: pointer;
+    
   }
 
   .description-box {
@@ -138,16 +153,32 @@
   }
 
   .desc-img-name {
-    width: 300px;
+    width: 450px;
     margin-left: 50px;
   }
 
   .desc-desc {
     margin-left: 100px;
-    margin-top: 150px;
-    width: 700px;
+    margin-top: 50px;
+    width: 800px;
+    height: 600px;
+    overflow-y: auto;
+    margin-right: 5%;
   }
 
   .movie-description {
     overflow-y: auto;
+  }
+
+  .modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
   }

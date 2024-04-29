@@ -1,18 +1,21 @@
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import LoadingGif from '../loading/loading.js'
 
-const Detail = ({ movieId, closeModal }) => {
+
+const Detail = () => {
     const [movie, setMovie] = useState(null);
+    const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchMovie = async () => {
-            const response = await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${movieId}`);
+            const response = await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`);
             const json = await response.json();
             setMovie(json.data.movie);
         };
 
         fetchMovie();
-    }, [movieId]);
+    }, [id]);
 
     const openImageInNewTab = () => {
         window.open(movie.large_cover_image, '_blank');
@@ -24,11 +27,8 @@ const Detail = ({ movieId, closeModal }) => {
         style={{ 
             backgroundImage: `url(${movie?.background_image_original})`,
         }}>
-           
+            <button onClick={() => navigate(-1)} className="go-back-btn"> ✖ </button>
             {movie ? (
-                <>
-                <button onClick={closeModal} className="go-back-btn"> ✖ </button>
-                
                 <div className="description-box">
                     <div className="desc-img-name">
                         <h2>{movie.title} ({movie.year || ""}) </h2>
@@ -44,9 +44,8 @@ const Detail = ({ movieId, closeModal }) => {
                         <div className="movie-description"> {movie.description_full  || movie.summary || 'No description available.'} </div>
                     </div>
                 </div>
-                </>
             ) : (
-                <LoadingGif/>
+                <div>Loading...</div>
             )}
         </div>
     );

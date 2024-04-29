@@ -30,7 +30,7 @@ const Header = () => {
         <div className="header">
         
             {pages.map((page, index) => linkButton(page, page.split(".")[0], index))}
-            <Link to="/intro">
+            <Link to="/">
                 <button
                     className="links-btn">
                     Intro(Readme)

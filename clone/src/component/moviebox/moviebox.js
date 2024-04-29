@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import MovieLink  from "../movielink/movielink.js";
 
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import LoadingGif from '../loading/loading.js'
 import '../../App.css'
 
 function MovieBox(props) {
@@ -34,14 +35,13 @@ function MovieBox(props) {
   };
     return (
         <>
-        <h2> Sorted by {sortName} </h2>
-
-        <div className="movies-holder">
         
         { loading ? 
-            (<strong> Loading... </strong> 
+            (<strong> <LoadingGif/> </strong> 
             ) : (
             <>
+            <h2> Sorted by {sortName} </h2>
+            <div className="movies-holder">
             <button onClick={() => Scroll('left')} className="lr-btn"> <SlArrowLeft/> </button>
             <div className="movie-contiainer" ref={moviesDirection}>
                 {movies.map((movie) => (
@@ -57,11 +57,11 @@ function MovieBox(props) {
                 ))}
             </div>
             <button onClick={() => Scroll('right')} className="lr-btn"> <SlArrowRight/> </button>
+            </div>
             </>
             )
             }
         
-    </div>
     </>)
 
 };
