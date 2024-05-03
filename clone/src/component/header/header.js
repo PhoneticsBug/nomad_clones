@@ -1,41 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-    const [pages, setPages] = useState([]);
 
-    useEffect(() => {
-        const importAll = (r) => {
-            return r.keys().map(r);
-        };
-        const pageContext = require.context("../../learning", true, /\.js$/);
-        const pageFiles = importAll(pageContext);
-        const pageNames = pageFiles.map((file) => file.default.name);
-        setPages(pageNames.filter(page => page !== "home"));
-    }, []);
-
-    const linkButton = (text, name) => {
+    const HeaderBtns = ({ txt, link }) => { 
         return (
-            <Link to={text} key={text}>
+            <>
+            <Link to={'/' + link}> 
                 <button
                     className="links-btn">
-                    {name}
+                    {txt}
                 </button>
             </Link>
-        );
-    };
+            </>
+        )
+    }
 
     return (
         <>
         <div className="header">
-        
-            {pages.map((page, index) => linkButton(page, page.split(".")[0], index))}
-            <Link to="/">
-                <button
-                    className="links-btn">
-                    Intro(Readme)
-                </button>
-            </Link>
+            <HeaderBtns txt="Clean up" link="cleanup"/> 
+            <HeaderBtns txt="Coin Converter" link="coin"/> 
+            <HeaderBtns txt="Router" link="learnrouter"/> 
+            <HeaderBtns txt="Movies" link=""/> 
+            <HeaderBtns txt="Todo List" link="todolist"/> 
+            <HeaderBtns txt="useState" link="learnusestate"/> 
+            <HeaderBtns txt="About" link="intro"/> 
         </div>
         <div className="margin-box"></div>
         </>

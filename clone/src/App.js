@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/LearnUseState" element={<LearnUseState />} />
         <Route path="/TodoList" element={<TodoList />} />
         <Route path="/Coin" element={<Coin />} />
-        <Route path="/Movie" element={<Movie />} />
+        {/* <Route path="/Movie" element={<Movie />} /> */}
         <Route path="/LearnRouter" element={<LearnRouter />} />
         <Route path="/Detail/:id" element={<Detail />} />
       </Routes>
