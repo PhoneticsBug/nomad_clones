@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/nomad_clones/static/css/main.ccb467a4.css",
-    "main.js": "/nomad_clones/static/js/main.54b007de.js",
+    "main.js": "/nomad_clones/static/js/main.9b4724cf.js",
     "static/media/loading.gif": "/nomad_clones/static/media/loading.0ae810bec6881540049b.gif",
     "index.html": "/nomad_clones/index.html",
     "main.ccb467a4.css.map": "/nomad_clones/static/css/main.ccb467a4.css.map",
-    "main.54b007de.js.map": "/nomad_clones/static/js/main.54b007de.js.map"
+    "main.9b4724cf.js.map": "/nomad_clones/static/js/main.9b4724cf.js.map"
   },
   "entrypoints": [
     "static/css/main.ccb467a4.css",
-    "static/js/main.54b007de.js"
+    "static/js/main.9b4724cf.js"
   ]
 }
