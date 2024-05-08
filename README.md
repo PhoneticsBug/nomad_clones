@@ -1,6 +1,8 @@
 # nomad coders - ReactJS로 영화 웹 서비스 만들기
 ## [gh-pages 링크 바로가기](https://phoneticsbug.github.io/nomad_clones/)
 
+<img src='https://github.com/PhoneticsBug/nomad_clones/blob/main/clone/public/screenshot.png?raw=true'/>
+
 ### 작업기간 
 - 2024.03~2024.05
 
