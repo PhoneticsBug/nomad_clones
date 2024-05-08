@@ -23,15 +23,15 @@ const App = () => {
      <Header/>
      <div className="route-box">
       <Routes>
-      <Route path="/" element={<Movie />} />
-        <Route path="/intro" element={<Intro />} />  
-        <Route path="/CleanUp" element={<CleanUp />} />
-        <Route path="/LearnUseState" element={<LearnUseState />} />
-        <Route path="/TodoList" element={<TodoList />} />
-        <Route path="/Coin" element={<Coin />} />
+      <Route path="/nomad_clones/" element={<Movie />} />
+        <Route path="/nomad_clones/intro" element={<Intro />} />  
+        <Route path="/nomad_clones/CleanUp" element={<CleanUp />} />
+        <Route path="/nomad_clones/LearnUseState" element={<LearnUseState />} />
+        <Route path="/nomad_clones/TodoList" element={<TodoList />} />
+        <Route path="/nomad_clones/Coin" element={<Coin />} />
         {/* <Route path="/Movie" element={<Movie />} /> */}
-        <Route path="/LearnRouter" element={<LearnRouter />} />
-        <Route path="/Detail/:id" element={<Detail />} />
+        <Route path="/nomad_clones/LearnRouter" element={<LearnRouter />} />
+        <Route path="/nomad_clones/Detail/:id" element={<Detail />} />
       </Routes>
      </div>
    </BrowserRouter>

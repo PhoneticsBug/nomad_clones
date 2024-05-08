@@ -19,12 +19,12 @@ const Header = () => {
     return (
         <>
         <div className="header">
-            <HeaderBtns txt="Clean up" link="cleanup"/> 
-            <HeaderBtns txt="Coin Converter" link="coin"/> 
-            <HeaderBtns txt="Router" link="learnrouter"/> 
-            <HeaderBtns txt="Movies" link=""/> 
-            <HeaderBtns txt="Todo List" link="todolist"/> 
-            <HeaderBtns txt="useState" link="learnusestate"/> 
+            <HeaderBtns txt="Clean up" link="nomad_clones/cleanup"/> 
+            <HeaderBtns txt="Coin Converter" link="nomad_clones/coin"/> 
+            <HeaderBtns txt="Router" link="nomad_clones/learnrouter"/> 
+            <HeaderBtns txt="Movies" link="nomad_clones/"/> 
+            <HeaderBtns txt="Todo List" link="nomad_clones/todolist"/> 
+            <HeaderBtns txt="useState" link="nomad_clones/learnusestate"/> 
             <HeaderBtns txt="About" link="intro"/> 
         </div>
         <div className="margin-box"></div>

@@ -1,5 +1,7 @@
 import {useState, useEffect} from "react";
 
+import LoadingGif from '../component/loading/loading.js'
+
 function Coin() {
     const [loading, setLoading] = useState(true);
     const [coins, setCoins] = useState([]);
@@ -40,12 +42,17 @@ function Coin() {
 
     return (
         <>
+        {loading ? <LoadingGif/> : 
+            <>
             <div>
                 <h1> The Coins {loading ? "" : `(${coins.length})`} </h1>
-                {loading ? <strong> Loading... </strong> : null}
+                
 
-                {!loading && (
-                    <select onChange={handleCoinSelect}>
+            </div>
+            <hr style={{'margin-top': '50px', 'margin-bottom': '40px'}}/>
+        <div>
+                <h2> Select coin and insert your wanted amount of dollars below. </h2>
+                <select onChange={handleCoinSelect}>
                         <option value="">Select a coin</option>
                         {coins.map((coin) => (
                             <option key={coin.id} value={coin.symbol}>
@@ -53,14 +60,13 @@ function Coin() {
                             </option>
                         ))}
                     </select>
-                )}
-
+                <div className="coin-box" >
+                    <input type="number" className="search-bar" value={inputValue} onChange={handleInputChange} placeholder="Enter dollar to convert" /> 
+                    {result !== "" && <h2 className="conv-result"> $ is {result} {selectedCoin ? selectedCoin.symbol : ""}! </h2>}
+                </div>
             </div>
-            <hr/>
-        <div>
-                <input type="number" value={inputValue} onChange={handleInputChange} placeholder="Enter dollar amount to convert" /> 
-                {result !== "" && <p> {inputValue} dollars is {result} {selectedCoin ? selectedCoin.symbol : ""}! </p>}
-            </div>
+            </>
+            }
         </>
     );
 };
@@ -68,6 +74,3 @@ function Coin() {
 export default Coin;
 
 // api.coinpaprika.com/v1/tickers
-
-// select된 값으로 환전되는 USD input 만들어보기 
-// loading 중일 때 select 숨기기 (done)

@@ -25,8 +25,10 @@ function CleanUp() {
 
     return (
         <div>
+        <h3> Button below will reveal hidden text!</h3>
         
         <button
+            className="clickme-btn"
             onClick={onClickReverse}> 
             {showing ? "Hide": "Show"} 
         </button>

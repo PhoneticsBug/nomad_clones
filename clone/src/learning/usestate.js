@@ -31,14 +31,17 @@ function LearnUseState() {
 
   return (
     <div>
+      <h3> Below is a Search bar but does nothing... </h3>
       <input 
+        className="search-bar"
         onChange={searchWord} 
         value={keyword}
         type="text" 
         placeholder="Search here..." 
         />
+      <h3> Below is a Click Counter, with refresh, it will go back to 0, clicking button below won't refresh whole page but only the counter. </h3>
       <h1> {value} </h1>
-      <button onClick={countUp}> Click </button>
+      <button onClick={countUp} className="clickme-btn"> Click me! </button>
     </div>
   );
 }
