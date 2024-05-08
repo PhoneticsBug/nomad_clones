@@ -25,7 +25,7 @@ const Header = () => {
             <HeaderBtns txt="Movies" link="nomad_clones/"/> 
             <HeaderBtns txt="Todo List" link="nomad_clones/todolist"/> 
             <HeaderBtns txt="useState" link="nomad_clones/learnusestate"/> 
-            <HeaderBtns txt="About" link="intro"/> 
+            <HeaderBtns txt="About" link="nomad_clones/intro"/> 
         </div>
         <div className="margin-box"></div>
         </>

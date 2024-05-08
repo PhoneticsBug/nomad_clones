@@ -29,7 +29,6 @@ const App = () => {
         <Route path="/nomad_clones/LearnUseState" element={<LearnUseState />} />
         <Route path="/nomad_clones/TodoList" element={<TodoList />} />
         <Route path="/nomad_clones/Coin" element={<Coin />} />
-        {/* <Route path="/Movie" element={<Movie />} /> */}
         <Route path="/nomad_clones/LearnRouter" element={<LearnRouter />} />
         <Route path="/nomad_clones/Detail/:id" element={<Detail />} />
       </Routes>
